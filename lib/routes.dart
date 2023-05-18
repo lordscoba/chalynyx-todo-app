@@ -1,6 +1,6 @@
-import 'package:chalynyx_todo_app/login.dart';
-import 'package:chalynyx_todo_app/signup.dart';
-import 'package:chalynyx_todo_app/splash.dart';
+import 'package:chalynyx_todo_app/screens/login.dart';
+import 'package:chalynyx_todo_app/screens/signup.dart';
+import 'package:chalynyx_todo_app/screens/splash.dart';
 import 'package:flutter/material.dart';
 
 class NextScreen extends StatelessWidget {

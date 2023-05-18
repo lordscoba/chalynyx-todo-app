@@ -76,7 +76,9 @@ class _MySignUpFormState extends State<MySignUpForm> {
             ),
             ChalynyxButton(
               text: "Register",
-              task: () {},
+              task: () {
+                Navigator.pushNamed(context, '/');
+              },
               paddingX: MediaQuery.of(context).size.width < 500 ? 110 : 250,
               paddingY: 20,
             ),

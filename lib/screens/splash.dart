@@ -46,7 +46,9 @@ class SplashPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 50),
               child: ChalynyxButton(
                 text: "Get Started",
-                task: () {},
+                task: () {
+                  Navigator.pushNamed(context, '/signup');
+                },
                 paddingX: 48.0,
                 paddingY: 20,
               ),
