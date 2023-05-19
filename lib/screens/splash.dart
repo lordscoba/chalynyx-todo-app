@@ -14,7 +14,9 @@ class SplashPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            const TopDesign(),
+            const TopDesign(
+              where: BlendMode.srcIn,
+            ),
             Expanded(
               flex: 3,
               child: Padding(
@@ -44,14 +46,17 @@ class SplashPage extends StatelessWidget {
             Container(
               height: 150,
               padding: const EdgeInsets.symmetric(vertical: 50),
-              child: ChalynyxButton(
-                text: "Get Started",
-                task: () {
-                  Navigator.pushNamed(context, '/signup');
-                },
-                paddingX: 48.0,
-                paddingY: 20,
-              ),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/signup');
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF0BA37F),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 48.0),
+                      shadowColor: Colors.grey[800],
+                      elevation: 6),
+                  child: const Text("Get Started")),
             )
           ],
         ),

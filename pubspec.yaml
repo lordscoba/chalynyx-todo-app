@@ -63,6 +63,9 @@ flutter:
   assets:
     - assets/images/splash_image.svg
     - assets/images/design_top.svg
+    - assets/images/login.svg
+    - assets/images/profilepics.svg
+    - assets/images/profilepics.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
