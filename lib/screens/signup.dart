@@ -195,7 +195,7 @@ class _MySignUpFormState extends State<MySignUpForm> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/');
+                  Navigator.pushNamed(context, '/home');
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF0BA37F),
@@ -215,7 +215,9 @@ class _MySignUpFormState extends State<MySignUpForm> {
               children: [
                 const Text("Already have an account?"),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/login');
+                  },
                   child: const Text("Sign in"),
                 )
               ],

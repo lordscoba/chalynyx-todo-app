@@ -36,7 +36,7 @@ class _UpdateUserState extends State<UpdateUser> {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
-                    hintText: 'Enter your email',
+                    hintText: 'Enter New Name',
                     hintStyle: const TextStyle(
                       color: Colors.black54,
                     ),
@@ -71,7 +71,7 @@ class _UpdateUserState extends State<UpdateUser> {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
-                    hintText: 'Enter your email',
+                    hintText: 'Enter New username',
                     hintStyle: const TextStyle(
                       color: Colors.black54,
                     ),
@@ -106,7 +106,7 @@ class _UpdateUserState extends State<UpdateUser> {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
-                    hintText: 'Enter your email',
+                    hintText: 'Enter New email',
                     hintStyle: const TextStyle(
                       color: Colors.black54,
                     ),
@@ -141,7 +141,7 @@ class _UpdateUserState extends State<UpdateUser> {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
-                    hintText: 'Enter your password',
+                    hintText: 'Enter New password',
                     hintStyle: const TextStyle(
                       color: Colors.black54,
                     ),
@@ -178,11 +178,11 @@ class _UpdateUserState extends State<UpdateUser> {
                     padding: EdgeInsets.symmetric(
                       vertical: 20,
                       horizontal:
-                          MediaQuery.of(context).size.width < 580 ? 150 : 250,
+                          MediaQuery.of(context).size.width < 580 ? 80 : 250,
                     ),
                     shadowColor: Colors.grey[800],
                     elevation: 6),
-                child: const Text("Register"),
+                child: const Text("Update user"),
               ),
             ],
           ),
