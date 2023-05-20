@@ -1,3 +1,4 @@
+import 'package:chalynyx_todo_app/admin/home.dart';
 import 'package:chalynyx_todo_app/screens/home.dart';
 import 'package:chalynyx_todo_app/screens/login.dart';
 import 'package:chalynyx_todo_app/screens/signup.dart';
@@ -20,12 +21,13 @@ class NextScreen extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      initialRoute: '/home',
+      initialRoute: '/admin/home',
       routes: {
         '/': (context) => const SplashPage(),
         '/login': (context) => const Login(),
         '/signup': (context) => const SignUp(),
         '/home': (context) => const Home(),
+        '/admin/home': (context) => const AdminHome(),
       },
     );
   }
