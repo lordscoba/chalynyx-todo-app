@@ -1,10 +1,9 @@
-import 'package:chalynyx_todo_app/admin/components/adduser.dart';
-import 'package:chalynyx_todo_app/admin/components/updateuser.dart';
+import 'package:chalynyx_todo_app/admin/components/updatetask.dart';
 import 'package:chalynyx_todo_app/widgets/components.dart';
 import 'package:flutter/material.dart';
 
-class AdminHome extends StatelessWidget {
-  const AdminHome({super.key});
+class TaskHome extends StatelessWidget {
+  const TaskHome({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +60,7 @@ class AdminHome extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            const H2(text: "Users List"),
+            const H2(text: "Admin Task List"),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 35),
               padding: const EdgeInsets.all(20),
@@ -99,23 +98,14 @@ class _UsersListState extends State<UsersList> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 230,
       child: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 3),
         children: [
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const H2(text: "Users"),
-              IconButton(
-                onPressed: () {
-                  addUser(context);
-                },
-                icon: const Icon(
-                  Icons.add_box_outlined,
-                  color: Color(0xFF0BA37F),
-                ),
-              )
+              H2(text: "Tasks"),
             ],
           ),
           const SizedBox(
@@ -123,17 +113,17 @@ class _UsersListState extends State<UsersList> {
           ),
           ListTile(
             contentPadding: const EdgeInsets.all(2),
-            leading: const Icon(Icons.account_circle),
+            leading: const Icon(Icons.task),
+            subtitle: const Text("task body"),
             title: const Text(
-              "Nwokoye Chris",
+              "Sleeping",
             ),
-            subtitle: const Text("smart@gmail.com,smart"),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
                   onPressed: () {
-                    editUser(context);
+                    editTask(context);
                   },
                   icon: const Icon(
                     Icons.edit,
@@ -152,17 +142,17 @@ class _UsersListState extends State<UsersList> {
           ),
           ListTile(
             contentPadding: const EdgeInsets.all(2),
-            leading: const Icon(Icons.account_circle),
+            leading: const Icon(Icons.task),
             title: const Text(
-              "Nwokoye Chris",
+              "Sleeping",
             ),
-            subtitle: const Text("smart@gmail.com,smart"),
+            subtitle: const Text("task body"),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
                   onPressed: () {
-                    editUser(context);
+                    editTask(context);
                   },
                   icon: const Icon(
                     Icons.edit,
@@ -181,17 +171,17 @@ class _UsersListState extends State<UsersList> {
           ),
           ListTile(
             contentPadding: const EdgeInsets.all(2),
-            leading: const Icon(Icons.account_circle),
+            leading: const Icon(Icons.task),
             title: const Text(
-              "Nwokoye Chris",
+              "Sleeping",
             ),
-            subtitle: const Text("smart@gmail.com,smart"),
+            subtitle: const Text("task body"),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
                   onPressed: () {
-                    editUser(context);
+                    editTask(context);
                   },
                   icon: const Icon(
                     Icons.edit,
@@ -213,20 +203,11 @@ class _UsersListState extends State<UsersList> {
     );
   }
 
-  Future<dynamic> addUser(BuildContext context) {
+  Future<dynamic> editTask(BuildContext context) {
     return showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        return const AddUser();
-      },
-    );
-  }
-
-  Future<dynamic> editUser(BuildContext context) {
-    return showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        return const UpdateUser();
+        return const UpdateTask();
       },
     );
   }
@@ -254,7 +235,7 @@ class TopHome1 extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: (MediaQuery.of(context).size.width / 2) - 60,
+            left: (MediaQuery.of(context).size.width / 2) - 50,
             bottom: 10,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -270,20 +251,11 @@ class TopHome1 extends StatelessWidget {
             right: 15,
             child: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/admin/task');
+                Navigator.pushNamed(context, '/admin/home');
               },
               icon: const Icon(Icons.logout),
             ),
-          ),
-          Positioned(
-              top: 48,
-              right: 15,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/login');
-                },
-                child: const Text("out"),
-              ))
+          )
         ],
       ),
     );

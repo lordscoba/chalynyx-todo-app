@@ -1,3 +1,5 @@
+import 'package:chalynyx_todo_app/screens/components/addtask.dart';
+import 'package:chalynyx_todo_app/screens/components/updatetask.dart';
 import 'package:chalynyx_todo_app/widgets/components.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +8,40 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color(0xFF0BA37F),
+        onPressed: () {
+          Navigator.pushNamed(context, '/login');
+        },
+        child: const Icon(
+          Icons.home,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        height: 50,
+        color: const Color(0xFF0BA37F),
+        shape: const CircularNotchedRectangle(),
+        notchMargin: 5,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                icon: const Icon(
+                  Icons.logout,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -59,7 +95,9 @@ class _ToDoListState extends State<ToDoList> {
             children: [
               const H2(text: "Daily Task"),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  addTask1(context);
+                },
                 icon: const Icon(
                   Icons.add_box_outlined,
                   color: Color(0xFF0BA37F),
@@ -85,16 +123,15 @@ class _ToDoListState extends State<ToDoList> {
                 });
               },
             ),
-          ),
-          ListTile(
-            title: const Text("Learn Javascript"),
-            leading: Checkbox(
-              value: _isChecked,
-              onChanged: (bool? value) {
-                setState(() {
-                  _isChecked = value!;
-                });
+            subtitle: const Text("This is the body"),
+            trailing: IconButton(
+              onPressed: () {
+                editTaskUser(context);
               },
+              icon: const Icon(
+                Icons.edit,
+                color: Color(0xFF0BA37F),
+              ),
             ),
           ),
           ListTile(
@@ -107,6 +144,16 @@ class _ToDoListState extends State<ToDoList> {
                 });
               },
             ),
+            subtitle: const Text("This is the body"),
+            trailing: IconButton(
+              onPressed: () {
+                editTaskUser(context);
+              },
+              icon: const Icon(
+                Icons.edit,
+                color: Color(0xFF0BA37F),
+              ),
+            ),
           ),
           ListTile(
             title: const Text("Learn Javascript"),
@@ -117,10 +164,59 @@ class _ToDoListState extends State<ToDoList> {
                   _isChecked = value!;
                 });
               },
+            ),
+            subtitle: const Text("This is the body"),
+            trailing: IconButton(
+              onPressed: () {
+                editTaskUser(context);
+              },
+              icon: const Icon(
+                Icons.edit,
+                color: Color(0xFF0BA37F),
+              ),
+            ),
+          ),
+          ListTile(
+            title: const Text("Learn Javascript"),
+            leading: Checkbox(
+              value: _isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  _isChecked = value!;
+                });
+              },
+            ),
+            subtitle: const Text("This is the body"),
+            trailing: IconButton(
+              onPressed: () {
+                editTaskUser(context);
+              },
+              icon: const Icon(
+                Icons.edit,
+                color: Color(0xFF0BA37F),
+              ),
             ),
           )
         ],
       ),
+    );
+  }
+
+  Future<dynamic> addTask1(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return const AddTaskUser();
+      },
+    );
+  }
+
+  Future<dynamic> editTaskUser(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return const UpdateTaskUser();
+      },
     );
   }
 }
@@ -246,7 +342,9 @@ class TopHome extends StatelessWidget {
             top: 15,
             right: 15,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/login');
+              },
               icon: const Icon(Icons.logout),
             ),
           )

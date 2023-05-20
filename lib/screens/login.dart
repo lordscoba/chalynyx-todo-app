@@ -132,7 +132,7 @@ class _MyLoginFormState extends State<MyLoginForm> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/');
+                  Navigator.pushNamed(context, '/home');
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF0BA37F),
@@ -143,7 +143,7 @@ class _MyLoginFormState extends State<MyLoginForm> {
                     ),
                     shadowColor: Colors.grey[800],
                     elevation: 6),
-                child: const Text("Register")),
+                child: const Text("login")),
             const SizedBox(
               height: 15,
             ),
@@ -152,8 +152,16 @@ class _MyLoginFormState extends State<MyLoginForm> {
               children: [
                 const Text("Don't have an account?"),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/signup');
+                  },
                   child: const Text("Sign Up"),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/admin/home');
+                  },
+                  child: const Text("admin"),
                 )
               ],
             )
