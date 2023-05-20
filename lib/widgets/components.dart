@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -30,20 +32,23 @@ class ChalynyxButton extends StatelessWidget {
 }
 
 class TopDesign extends StatelessWidget {
+  final BlendMode where;
   const TopDesign({
     super.key,
+    required this.where,
   });
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         SvgPicture.asset(
           "assets/images/design_top.svg",
           semanticsLabel: 'Splash Image',
           color: const Color(0xFF0BA37F),
-          colorBlendMode: BlendMode.srcIn,
+          colorBlendMode: where,
         ),
       ],
     );

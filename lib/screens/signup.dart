@@ -6,25 +6,28 @@ class SignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
-      body: ListView(
-        children: [
-          Column(
-            children: const [
-              Center(child: TopDesign()),
-              SizedBox(
-                height: 35,
-              ),
-              H2(text: "Welcome Onboard"),
-              SizedBox(
-                height: 15,
-              ),
-              Text("We help you meet up to your task on time"),
-            ],
-          ),
-          const MySignUpForm()
-        ],
+    return const Scaffold(
+      backgroundColor: Color(0xFFF5F5F5),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            TopDesign(
+              where: BlendMode.srcIn,
+            ),
+            SizedBox(
+              height: 35,
+            ),
+            H2(text: "Welcome Onboard"),
+            SizedBox(
+              height: 15,
+            ),
+            Text("We help you meet up to your task on time"),
+            SizedBox(
+              height: 35,
+            ),
+            MySignUpForm()
+          ],
+        ),
       ),
     );
   }
@@ -50,38 +53,160 @@ class _MySignUpFormState extends State<MySignUpForm> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const InputField(
-              placeholder: 'Enter your Full Name',
+            SizedBox(
+              width: MediaQuery.of(context).size.width < 500 ? 380 : 550,
+              child: TextFormField(
+                style: const TextStyle(color: Colors.black54),
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  hintText: 'Enter your Full Name',
+                  hintStyle: const TextStyle(
+                    color: Colors.black54,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Color(0xFFFFFFFF),
+                      width: 0.5,
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Colors.black38,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                validator: (value) {
+                  return null;
+                },
+                onSaved: (value) {},
+              ),
             ),
             const SizedBox(
               height: 15,
             ),
-            const InputField(
-              placeholder: 'Enter your email',
+            SizedBox(
+              width: MediaQuery.of(context).size.width < 500 ? 380 : 550,
+              child: TextFormField(
+                style: const TextStyle(color: Colors.black54),
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  hintText: 'Enter your email',
+                  hintStyle: const TextStyle(
+                    color: Colors.black54,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Color(0xFFFFFFFF),
+                      width: 0.5,
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Colors.black38,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                validator: (value) {
+                  return null;
+                },
+                onSaved: (value) {},
+              ),
             ),
             const SizedBox(
               height: 15,
             ),
-            const InputField(
-              placeholder: 'Enter your password',
+            SizedBox(
+              width: MediaQuery.of(context).size.width < 500 ? 380 : 550,
+              child: TextFormField(
+                style: const TextStyle(color: Colors.black54),
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  hintText: 'Enter your password',
+                  hintStyle: const TextStyle(
+                    color: Colors.black54,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Color(0xFFFFFFFF),
+                      width: 0.5,
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Colors.black38,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                validator: (value) {
+                  return "hi";
+                },
+                onSaved: (value) {},
+              ),
             ),
             const SizedBox(
               height: 15,
             ),
-            const InputField(
-              placeholder: 'Confirm Password',
+            SizedBox(
+              width: MediaQuery.of(context).size.width < 500 ? 380 : 550,
+              child: TextFormField(
+                style: const TextStyle(color: Colors.black54),
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  hintText: 'Confirm Password',
+                  hintStyle: const TextStyle(
+                    color: Colors.black54,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Color(0xFFFFFFFF),
+                      width: 0.5,
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Colors.black38,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                validator: (value) {
+                  return null;
+                },
+                onSaved: (value) {},
+              ),
             ),
             const SizedBox(
               height: 15,
             ),
-            ChalynyxButton(
-              text: "Register",
-              task: () {
-                Navigator.pushNamed(context, '/');
-              },
-              paddingX: MediaQuery.of(context).size.width < 500 ? 110 : 250,
-              paddingY: 20,
-            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/');
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF0BA37F),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 20,
+                      horizontal:
+                          MediaQuery.of(context).size.width < 580 ? 150 : 250,
+                    ),
+                    shadowColor: Colors.grey[800],
+                    elevation: 6),
+                child: const Text("Register")),
             const SizedBox(
               height: 15,
             ),
@@ -91,7 +216,7 @@ class _MySignUpFormState extends State<MySignUpForm> {
                 const Text("Already have an account?"),
                 TextButton(
                   onPressed: () {},
-                  child: const Text("Sign Up"),
+                  child: const Text("Sign in"),
                 )
               ],
             )
