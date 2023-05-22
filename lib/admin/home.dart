@@ -249,8 +249,10 @@ class TopHome1 extends StatelessWidget {
           const Positioned(
             left: 0,
             top: 0,
-            child: TopDesign(
-              where: BlendMode.color,
+            child: ClipRRect(
+              child: TopDesign(
+                where: BlendMode.color,
+              ),
             ),
           ),
           Positioned(

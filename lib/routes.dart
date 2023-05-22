@@ -22,7 +22,7 @@ class NextScreen extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      initialRoute: '/',
+      initialRoute: '/home',
       routes: {
         '/': (context) => const SplashPage(),
         '/login': (context) => const Login(),

@@ -19,7 +19,7 @@ class SplashPage extends StatelessWidget {
                 where: BlendMode.srcIn,
               ),
               SizedBox(
-                height: 270,
+                height: 279,
                 child: Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal:
